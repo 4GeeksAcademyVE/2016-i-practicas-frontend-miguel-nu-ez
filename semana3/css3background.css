@@ -1,0 +1,5 @@
+.contenedor{
+	background: yellow;
+	background-image: url(IMG001.JPEG),url(IMG002.JPEG),url(IMG003.JPEG);
+	background-position: right bottom, center, left top;
+}

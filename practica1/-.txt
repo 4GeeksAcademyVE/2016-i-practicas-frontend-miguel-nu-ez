@@ -1,0 +1,182 @@
+<?php
+function enviar($mensaje){
+	echo $mensaje."\n";
+}
+
+menu();
+function menu(){
+$opcion=0;
+while ($opcion != 4){
+  echo ("1.- Iniciar juego \n");
+  echo ("2.- Animales disponibles \n");
+  echo ("3.- Autor \n");
+  echo ("4.- Salir del juego \n");
+$val = trim(fgets(STDIN)); 
+	 switch($val){
+		case 1:
+			system('clear');
+			iniciarJuego();
+			break;
+		case 2:
+			system('clear');
+			animales();
+			break;
+		case 3:
+			system('clear');
+			$autor = mostrarAutor();
+			echo $autor;
+			$continuar = trim(fgets(STDIN));
+			break;
+		case 4:
+			system ('clear');
+			echo ("Presione enter para continuar \n");
+			break;
+		default:
+			enviar("No es una opcion valida \n");
+			break;	
+		}
+	}
+}
+
+function animales(){
+	echo ("Vaca \n");
+	echo ("Cabra \n");
+	echo ("Cochino \n");
+	echo ("Caballo \n");
+	echo ("Zorro Artico \n");
+	echo ("Oso Polar \n");
+	echo ("Hamster \n");
+	echo ("Zorro \n");
+	echo ("Flamingo \n");
+	echo ("Buitre \n");
+	echo ("Avestruz \n");
+	echo ("Gallina \n");
+	echo ("Estrella de mar \n");
+	echo ("Cascabel \n");
+	echo ("Delfin \n");
+	echo ("Presione enter para continuar \n");
+	$respuesta = trim(fgets(STDIN));
+	
+}
+
+function mostrarAutor(){
+	$mensaje = ("     Autor	\n");
+	$mensaje .= ("Nombre: Annemarie \n");
+	$mensaje .= ("Apellido: Rolo \n");
+	$mensaje .= ("Presione enter para continuar \n");
+	return $mensaje;
+	
+}	
+
+function iniciarJuego(){
+	echo ("Introduzca S o N en las siguientes preguntas \n");
+	echo ("El animal tiene cuatro patas? ");
+	$S1 = trim(fgets(STDIN));
+	if ($S1 == 'S'){
+		echo ("El animal vive en una granja? ");
+		$S2 = trim(fgets(STDIN));
+		if ($S2 == 'S'){
+			echo ("Las personas toman la leche del animal? ");
+			$S3 = trim(fgets(STDIN));
+			if ($S3 == 'S'){
+				echo ("El animal es blanco o negro? ");
+				$S4 = trim(fgets(STDIN));
+				if ($S4 == 'S'){
+					echo ("El animal es una vaca  \n");
+					echo ("\n");
+				}else{
+					echo ("El animal es una cabra \n");
+					echo ("\n");
+				}
+			}else if ($S3 == 'N'){
+				echo ("El animal es rosado? ");
+				$S5 = trim(fgets(STDIN));
+				if ($S5 == 'S'){
+					echo ("El animal es un cochino \n");
+					echo ("\n");
+				}else{
+					echo ("El animal es un caballo \n");
+					echo ("\n");
+				}
+			}
+		}else if ($S2 == 'N') {
+			echo ("El animal vive en la zona Polar? ");
+			$S6 = trim(fgets(STDIN));
+			if ($S6 == 'S'){
+				echo ("El animal mide menos de 1 metro? ");
+				$S7 = trim(fgets(STDIN));
+				if ($S7 == 'S'){
+					echo ("El animal es un zorro artico \n");
+					echo ("\n");
+				}else{
+					echo ("El animal es un oso polar \n");
+					echo ("\n");
+				}
+			}else if ($S6 == 'N'){
+				echo ("Al animal le gusta comer plantas? ");
+				$S8 = trim(fgets(STDIN));
+				if ($S8 == 'S'){
+					echo ("El animal es un hamster \n");
+					echo ("\n");
+				}else{
+					echo ("El animal es un zorro \n");
+					echo ("\n");
+				}
+			}
+		}		
+	}else if ($S1 == 'N') {
+		echo ("El animal solo tiene dos patas? ");
+		$S9 = trim(fgets(STDIN));
+		if ($S9 == 'S'){
+			echo ("El animal vive en America del Sur? ");
+			$S10 = trim(fgets(STDIN));
+			if ($S10 == 'S'){
+				echo ("El animal tiene un cuello largo? ");
+				$S11 = trim(fgets(STDIN));
+				if ($S11 == 'S'){
+					echo ("El animal es un flamingo \n");
+					echo ("\n");
+				}else{
+					echo ("El animal es un buitre \n");
+					echo ("\n");
+				}
+			}else if ($S10 == 'N'){
+				echo ("El animal mide mas de 50 centimetros? ");
+				$S12 = trim(fgets(STDIN));
+				if ($S12 == 'S'){
+					echo ("El animal es un avestruz \n");
+					echo ("\n");
+				}else{
+					echo ("El animal es una gallina \n");
+					echo ("\n");
+				}
+			}
+		}else if ($S9 == 'N') {
+			echo ("El animal tiene patas? ");
+			$S13 = trim(fgets(STDIN));
+			if ($S13 == 'S'){
+				echo ("El animal come peces peque;os? ");
+				$S14 = trim(fgets(STDIN));
+				if ($S14 == 'S'){
+					echo ("El animal es una estrella de mar \n");
+					echo ("\n");
+				}else{
+					echo ("El animal es una tarantula \n");
+					echo ("\n");
+				}
+			}else if ($S13 == 'N') {
+				echo ("El animal es venenoso? ");
+				$S15 = trim(fgets(STDIN));
+				if ($S15 == 'S'){
+					echo ("El animal es una cascabel \n");
+					echo ("\n");
+				}else{
+					echo ("El animal es un delfin \n");
+					echo ("\n");
+				}
+			}
+	}	}
+}		
+
+		
+?>
